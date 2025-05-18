@@ -91,7 +91,20 @@
         <!-- Collaboration section -->
         <div class="collaboration-section">
             <h2>We work together with</h2>
-            <p>Over the years we've partnered with corporates, start-ups and social initiatives.</p>
+            <div class="partners-logos">
+                <img src="{{ url_for('static', filename='images/logo_1.png') }}" alt="Partner 1">
+                <img src="{{ url_for('static', filename='images/logo_2.png') }}" alt="Partner 2">
+                <img src="{{ url_for('static', filename='images/logo_3.png') }}" alt="Partner 3">
+                <img src="{{ url_for('static', filename='images/logo_4.png') }}" alt="Partner 4">
+                <img src="{{ url_for('static', filename='images/logo_5.png') }}" alt="Partner 5">
+            </div>
+            <div class="partners-logos">
+                <img src="{{ url_for('static', filename='images/logo_6.png') }}" alt="Partner 6">
+                <img src="{{ url_for('static', filename='images/logo_7.png') }}" alt="Partner 7">
+                <img src="{{ url_for('static', filename='images/logo_8.png') }}" alt="Partner 8">
+                <img src="{{ url_for('static', filename='images/logo_9.png') }}" alt="Partner 9">
+                <img src="{{ url_for('static', filename='images/logo_10.png') }}" alt="Partner 10">
+            </div>
         </div>
         <!-- Activities section -->
         <div class="activities-section">
@@ -115,21 +128,63 @@
             </div>
         </div>
         <!-- Testimonials section -->
-        <div class="testimonials-section">
-            <h2>What others say about us, rotating testimonials</h2>
-            <div class="testimonial">
-                <p>"I especially like that there is a place for reflection and sharing vulnerable stories."</p>
-                <strong>Wendy Stokwielder</strong>
-            </div>
-            <div class="testimonial">
-                <p>"A place where we can discuss topics that affect us all, away from the hustle of daily life."</p>
-                <strong>Dave Severins</strong>
-            </div>
-            <div class="testimonial">
-                <p>"A safe space where personal growth, depth & relaxation meet."</p>
-                <strong>Tjerk Busstra</strong>
+        <div class="testimonials-bg-full">
+            <div class="testimonials-section testimonials-flex">
+                <div class="testimonials-title-left">
+                    <h2>What others say about us</h2>
+                </div>
+                <div class="testimonials-carousel-right">
+                    <div class="testimonial-carousel">
+                        <button class="testimonial-arrow" id="testimonial-prev">&#8592;</button>
+                        <div class="testimonial-cards" id="testimonial-cards">
+                            <!-- JS 渲染图片 -->
+                        </div>
+                        <button class="testimonial-arrow" id="testimonial-next">&#8594;</button>
+                    </div>
+                </div>
             </div>
         </div>
+        <script>
+        const testimonialImages = [
+            "{{ url_for('static', filename='images/pep_1.png') }}",
+            "{{ url_for('static', filename='images/pep_2.png') }}",
+            "{{ url_for('static', filename='images/pep_3.png') }}",
+            "{{ url_for('static', filename='images/pep_4.png') }}",
+            "{{ url_for('static', filename='images/pep_5.png') }}",
+            "{{ url_for('static', filename='images/pep_6.png') }}"
+        ];
+        let testimonialIndex = 0;
+        const testimonialCardsDiv = document.getElementById('testimonial-cards');
+        function renderTestimonialCards() {
+            testimonialCardsDiv.innerHTML = '';
+            for (let i = -1; i <= 1; i++) {
+                let idx = (testimonialIndex + i + testimonialImages.length) % testimonialImages.length;
+                const card = document.createElement('div');
+                card.className = 'testimonial-img-card';
+                const img = document.createElement('img');
+                img.src = testimonialImages[idx];
+                img.alt = 'Testimonial ' + (idx+1);
+                if (i !== 0) {
+                    img.style.opacity = '0.4';
+                    img.style.filter = 'blur(2px)';
+                } else {
+                    img.style.opacity = '1';
+                    img.style.filter = 'none';
+                }
+                card.appendChild(img);
+                testimonialCardsDiv.appendChild(card);
+            }
+        }
+        document.getElementById('testimonial-prev').onclick = function() {
+            testimonialIndex = (testimonialIndex - 1 + testimonialImages.length) % testimonialImages.length;
+            renderTestimonialCards();
+        };
+        document.getElementById('testimonial-next').onclick = function() {
+            testimonialIndex = (testimonialIndex + 1) % testimonialImages.length;
+            renderTestimonialCards();
+        };
+        renderTestimonialCards();
+        </script>
         <!-- Google Map section -->
         <div class="map-section" id="map-section">
             <iframe
