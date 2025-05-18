@@ -594,7 +594,7 @@ main {
 
 /* Testimonials section */
 .testimonials-bg-full {
-    width: 100vw;
+    width: 99.5vw;
     position: relative;
     left: 50%;
     right: 50%;
@@ -602,10 +602,14 @@ main {
     margin-right: -50vw;
     background: #29184A;
     z-index: 0;
+    border-radius: 0;
+    box-sizing: border-box;
+    padding: 0;
 }
 .testimonials-section {
-    background: none;
-    padding: 0;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 56px 0 64px 0;
 }
 .testimonials-section h2 {
     font-family: 'Inter', sans-serif;
@@ -882,5 +886,13 @@ main {
         width: 80px;
         height: 80px;
         object-fit: contain;
+    }
+}
+
+@media (max-width: 1200px) {
+    .testimonials-section {
+        max-width: 100%;
+        padding-left: 8px;
+        padding-right: 8px;
     }
 }
