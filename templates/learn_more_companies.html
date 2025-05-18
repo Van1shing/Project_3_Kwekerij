@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Companies – Purpose in Action</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body style="font-family: 'Inter', sans-serif; background: #f7f7fa;">
+    <!-- Header Section -->
+    <header>
+        <div class="logo">
+            <a href="{{ url_for('home') }}">
+                <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Website Logo">
+            </a>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="{{ url_for('home') }}#map-section">Locations</a></li>
+                <li><a href="{{ url_for('communities') }}">Communities</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropbtn">Programs</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="{{ url_for('learn_more_blooming') }}">Blooming sessions</a></li>
+                        <li><a href="{{ url_for('learn_more_language_cafe') }}">Language cafe</a></li>
+                        <li><a href="{{ url_for('learn_more_generations') }}">Generations at the Table</a></li>
+                        <li><a href="{{ url_for('learn_more_companies') }}">Companies – Purpose in Action</a></li>
+                        <li><a href="{{ url_for('mentoring') }}">Mentoring</a></li>
+                    </ul>
+                </li>
+                <li><a href="{{ url_for('about') }}">About Us</a></li>
+                <li><a href="{{ url_for('faq') }}">FAQ</a></li>
+                <li><a href="{{ url_for('contact') }}">Contact Us</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <!-- Top Title Section -->
+        <div style="max-width: 1100px; margin: 48px auto 0 auto; padding: 0 0; text-align: left;">
+            <h1 style="font-size: 2.2rem; font-weight: 800; color: #29184A; margin-bottom: 8px; letter-spacing: 0.5px; text-align: left;">
+                FOR COMPANIES
+            </h1>
+            <div style="font-size: 1.05rem; color: #232323; margin-bottom: 0; text-align: left;">
+                For trainees, beginners, and even senior professionals, we offer inspiring sessions on location.<br>
+                These can be for teams or larger groups of over 100 participants.
+            </div>
+        </div>
+        <!-- Purple Section -->
+        <div style="background: #29184A; margin: 48px 0 0 0; padding: 48px 0; width: 100%;">
+            <div style="max-width: 1100px; margin: 0 auto; display: flex; flex-wrap: wrap; align-items: flex-start; justify-content: space-between; padding: 0 24px; gap: 32px; text-align: left;">
+                <div style="flex: 1 1 320px; min-width: 260px;">
+                    <div style="font-size: 2.1rem; font-weight: 800; color: #fff; line-height: 1.1; margin-bottom: 0; letter-spacing: 0.5px; text-align: left;">INSPIRING<br>ON-SITE<br>SESSIONS</div>
+                </div>
+                <div style="flex: 2 1 400px; min-width: 320px; color: #fff; font-size: 1.05rem; display: flex; flex-direction: column; gap: 18px; text-align: left;">
+                    <div>We challenge you to reflect in an unconventional and creative way. Using philosophy, theology, art and disruptive exercises, we offer you clear ideas that will make you look at your situation in new ways.</div>
+                    <div>View an impression of a workshop we gave at the municipality of Amsterdam on the right. Want to know more about the possibilities? Request our brochure!</div>
+                    <div><button style="background: #F2994A; color: #fff; font-family: 'Inter', sans-serif; font-weight: 600; font-size: 1rem; border: none; border-radius: 8px; padding: 10px 28px; cursor: pointer;">Request our brochure!</button></div>
+                </div>
+            </div>
+        </div>
+        <!-- What can you expect? Section -->
+        <div style="max-width: 1100px; margin: 0 auto; display: flex; flex-wrap: wrap; align-items: flex-start; gap: 32px; background: #fff; padding: 36px 32px 32px 32px; border-radius: 0 0 8px 8px; text-align: left;">
+            <div style="flex: 2 1 400px; min-width: 320px;">
+                <h2 style="font-size: 1.2rem; font-weight: 700; color: #232323; margin-bottom: 12px; text-align: left;">What can you expect?</h2>
+                <div style="font-size: 1.05rem; color: #232323; line-height: 1.7; text-align: left;">
+                    We offer our training courses in-company or at one of our locations (in the heart of Amsterdam). Of course, we also provide custom work. So if you have a specific question, for example about breaking patterns or having good conversations, let us know! We are happy to put together a custom training course in consultation or give one of our regular workshops.
+                </div>
+            </div>
+            <div style="flex: 1 1 260px; min-width: 220px; display: flex; align-items: center; justify-content: center;">
+                <img src="{{ url_for('static', filename='images/companies_1.png') }}" alt="Workshop Impression" style="width: 100%; max-width: 260px; border-radius: 8px; object-fit: cover;">
+            </div>
+        </div>
+        <!-- About Section -->
+        <div style="max-width: 1100px; margin: 32px auto 0 auto; display: flex; flex-wrap: wrap; align-items: flex-start; gap: 32px; background: #f7f7fa; padding: 0 32px 32px 32px; text-align: left;">
+            <div style="flex: 2 1 400px; min-width: 320px; background: #fff; border-radius: 8px; padding: 32px 24px 24px 24px; text-align: left;">
+                <h3 style="font-size: 1.1rem; font-weight: 700; color: #29184A; margin-bottom: 12px; text-align: left;">About De Kwekerij</h3>
+                <div style="font-size: 1.02rem; color: #232323; line-height: 1.7; text-align: left;">
+                    De Kwekerij provides training and inspiration sessions specialized in the bigger questions and challenges of professionals. What is my calling? How am I meaningful? How do I let go of old certainties and make room for new development? But also how do I deal with conflict and (old school) stress? We know the world of millennials and generation Z like no other. This also applies to the challenges that this generation and their managers face. We are happy to share our knowledge and expertise!<br><br>
+                    Interested in a training or lecture at your workplace? Please contact us. We would be happy to tell you more about the possibilities.
+                </div>
+            </div>
+            <div style="flex: 1 1 320px; min-width: 260px; background: #fff; border-radius: 8px; padding: 32px 24px 24px 24px; box-shadow: 0 2px 8px rgba(41,24,74,0.06); text-align: left;">
+                <h4 style="font-size: 1.05rem; font-weight: 700; color: #232323; margin-bottom: 16px; text-align: left;">You can read more about the possibilities in our brochure.</h4>
+                <form style="display: flex; flex-direction: column; gap: 10px; text-align: left;">
+                    <input type="text" placeholder="Name" style="padding: 10px; border: 1px solid #ccc; border-radius: 4px; font-size: 1rem;">
+                    <input type="email" placeholder="E-mail" style="padding: 10px; border: 1px solid #ccc; border-radius: 4px; font-size: 1rem;">
+                    <input type="text" placeholder="Your company or organization" style="padding: 10px; border: 1px solid #ccc; border-radius: 4px; font-size: 1rem;">
+                    <div style="display: flex; align-items: center; gap: 8px;">
+                        <span style="font-size: 1rem; color: #232323;">7 + 7 =</span>
+                        <input type="text" style="width: 40px; padding: 8px; border: 1px solid #ccc; border-radius: 4px; font-size: 1rem;">
+                    </div>
+                    <button type="submit" style="background: #F2994A; color: #fff; font-family: 'Inter', sans-serif; font-weight: 600; font-size: 1rem; border: none; border-radius: 6px; padding: 10px 24px; cursor: pointer; margin-top: 8px;">Send</button>
+                </form>
+            </div>
+        </div>
+        <!-- Explore More Section -->
+        <div style="max-width: 1200px; margin: 64px auto 0 auto; font-family: 'Inter', sans-serif;">
+            <h2 class="section-title" style="margin-left: 24px;">Explore More</h2>
+        </div>
+        <div class="what-we-do-cards">
+            <div class="what-we-do-card">
+                <img src="{{ url_for('static', filename='images/blommers_picture.png') }}" alt="Blooming sessions">
+                <div class="card-overlay">
+                    <h3>Blooming sessions</h3>
+                    <p>Sessions for young adults on choices, passions & mental health.</p>
+                    <a href="{{ url_for('learn_more_blooming') }}" class="learn-more">Learn more &rarr;</a>
+                </div>
+            </div>
+            <div class="what-we-do-card">
+                <img src="{{ url_for('static', filename='images/bloomers_picture_2.png') }}" alt="Language cafe">
+                <div class="card-overlay">
+                    <h3>Language cafe</h3>
+                    <p>Dutch language & culture exchange for newcomers with locals.</p>
+                    <a href="{{ url_for('learn_more_language_cafe') }}" class="learn-more">Learn more &rarr;</a>
+                </div>
+            </div>
+            <div class="what-we-do-card">
+                <img src="{{ url_for('static', filename='images/intergeneration_dinner.png') }}" alt="Generations at the Table">
+                <div class="card-overlay">
+                    <h3>Generations at the Table</h3>
+                    <p>Dinners pairing students and seniors to earn wisdom over food.</p>
+                    <a href="{{ url_for('learn_more_generations') }}" class="learn-more">Learn more &rarr;</a>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer class="footer-section">
+        <div class="footer-inner">
+            <div class="footer-locations">
+                <div class="footer-location">
+                    <strong>The Nursery</strong><br>
+                    Nieuwe Herengracht 18<br>
+                    1018 DP Amsterdam
+                </div>
+                <div class="footer-location">
+                    <strong>The Nursery</strong><br>
+                    Neude 11<br>
+                    3512 AE Utrecht
+                </div>
+                <div class="footer-location">
+                    <strong>The Nursery</strong><br>
+                    's-Gravensloot 14<br>
+                    3471 BM Woerden
+                </div>
+            </div>
+            <div class="footer-newsletter">
+                <button class="newsletter-btn">Newsletter Signup</button>
+            </div>
+        </div>
+    </footer>
+</body>
+</html> 

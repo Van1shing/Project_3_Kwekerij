@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mentoring</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body style="font-family: 'Inter', sans-serif; background: #f7f7fa;">
+    <!-- Header Section -->
+    <header>
+        <div class="logo">
+            <a href="{{ url_for('home') }}">
+                <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Website Logo">
+            </a>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="{{ url_for('home') }}#map-section">Locations</a></li>
+                <li><a href="{{ url_for('communities') }}">Communities</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropbtn">Programs</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="{{ url_for('learn_more_blooming') }}">Blooming sessions</a></li>
+                        <li><a href="{{ url_for('learn_more_language_cafe') }}">Language cafe</a></li>
+                        <li><a href="{{ url_for('learn_more_generations') }}">Generations at the Table</a></li>
+                        <li><a href="{{ url_for('learn_more_companies') }}">Companies – Purpose in Action</a></li>
+                        <li><a href="{{ url_for('mentoring') }}">Mentoring</a></li>
+                    </ul>
+                </li>
+                <li><a href="{{ url_for('about') }}">About Us</a></li>
+                <li><a href="{{ url_for('faq') }}">FAQ</a></li>
+                <li><a href="{{ url_for('contact') }}">Contact Us</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- Main content goes here -->
+    <!-- Top Banner Section -->
+    <div style="width: 100%; min-height: 220px; background: url('{{ url_for('static', filename='images/mentoring_main.png') }}') center center/cover no-repeat; display: flex; flex-direction: column; justify-content: center; align-items: center; position: relative;">
+        <div style="width: 100%; padding: 48px 0 32px 0; text-align: center; position: relative; z-index: 2;">
+            <h1 style="font-size: 2.6rem; font-weight: 900; color: #29184A; margin-bottom: 0; letter-spacing: 2px; text-shadow: 0 2px 8px rgba(255,255,255,0.18);">WELCOME TO THE&nbsp; MENTORING PROGRAM</h1>
+        </div>
+    </div>
+    <!-- Info Section -->
+    <div style="background: #fff; width: 100%; padding: 48px 0 0 0;">
+        <div style="max-width: 900px; margin: 0 auto; padding: 0 32px 48px 32px; text-align: left;">
+            <h2 style="font-size: 1.25rem; font-weight: 700; color: #232323; margin-bottom: 18px;">What's a Mentoring Program?</h2>
+            <div style="font-size: 1.05rem; color: #232323; line-height: 1.7;">
+                In a world that is constantly changing, meaningful mentoring is most welcome. De Kwekerij's mentoring programme brings together experienced professionals and committed young people to learn and grow. This programme is specially designed for people who find social commitment and meaning important in their (working) lives and for mentors who want to guide others on their (career) path from their own experience.<br><br>
+                During a 1-on-1 session, mentor and mentee walk together for a while. The conversations take place in an equal setting. So sometimes a mentor also learns something from a mentee. Mentors offer a listening ear and allow you to think more deeply about your own development through personal attention. On themes like making choices, relationships and moral ambition, they bring in their own experience and sometimes network.<br><br>
+                We make matches based on common interests. And there is always an introductory meeting first, after which you may or may not continue.<br><br>
+                The cost of making a match from De Kwekerij is €200, but for the first 10 matches this year we offer a 50% discount. Otherwise, all interviews are free of charge.
+            </div>
+        </div>
+    </div>
+    <!-- Mentors Carousel Section -->
+    <div style="background: #f7f7fa; width: 100%; padding: 0 0 64px 0;">
+        <div style="max-width: 700px; margin: 0 auto; padding: 0 32px; text-align: center;">
+            <h2 style="font-size: 2rem; font-weight: 800; color: #1B1042; margin-bottom: 32px;">These are our mentors</h2>
+            <div id="mentor-carousel" style="position: relative; width: 100%; max-width: 500px; margin: 0 auto; display: flex; align-items: center; justify-content: center;">
+                <button id="mentor-prev" style="position: absolute; left: -40px; top: 50%; transform: translateY(-50%); background: #29184A; color: #fff; border: none; border-radius: 50%; width: 36px; height: 36px; font-size: 1.5rem; cursor: pointer; opacity: 0.85; z-index: 2;">&#8592;</button>
+                <div id="mentor-cards" style="display: flex; gap: 16px; width: 100%; justify-content: center; align-items: center; transition: transform 0.5s;">
+                    <!-- Cards will be rendered by JS -->
+                </div>
+                <button id="mentor-next" style="position: absolute; right: -40px; top: 50%; transform: translateY(-50%); background: #29184A; color: #fff; border: none; border-radius: 50%; width: 36px; height: 36px; font-size: 1.5rem; cursor: pointer; opacity: 0.85; z-index: 2;">&#8594;</button>
+            </div>
+            <div id="mentor-caption" style="margin-top: 18px; min-height: 48px; font-size: 1.05rem; color: #232323;"></div>
+        </div>
+    </div>
+    <script>
+        const mentorImages = [
+            '{{ url_for('static', filename='images/mentoring_1.jpg') }}',
+            '{{ url_for('static', filename='images/mentoring_2.jpg') }}',
+            '{{ url_for('static', filename='images/mentoring_3.jpg') }}',
+            '{{ url_for('static', filename='images/mentoring_4.jpg') }}'
+        ];
+        const mentorCaptions = [
+            '<span style="font-weight:700; color:#1B1042;">Diederik Slot - Country Manager @Porticus</span><br>Diederik has a wealth of experience in fundraising, team development and leadership issues. He is available as a mentor for people setting up social projects or wanting to develop them in a sustainable way. At the same time, he wonders if he can sometimes also be a "mentee" and thus the roles are reversed or exchanged. Diederik knows from his own experience how valuable a mentor can be. And that besides practical tips, it is also about encouragement, giving trust and listening with attention.',
+            '<span style="font-weight:700; color:#1B1042;">Margreet Haandrikman - Supervisor & Commissioner</span><br>Are you looking for someone with extensive experience in governance, financial strategy and an eye for social impact? Then meet Margreet Haandrikman. She is available as a mentor for people who work or have questions about (business) ethics, diversity and inclusion. She enjoys discussing how to stay on course in a world where technological developments and leadership sometimes seem at odds with these values. She knows the importance of balancing pragmatism and ideals and is someone who embodies both of these sides. Don\'t think of her as a mentor who only transfers knowledge, but as an equal sparring partner who also enjoys reflection, critical questions and mutual learning. Because a good conversation can be just as valuable as strategic advice.',
+            '<span style="font-weight:700; color:#1B1042;">Paul van Oosten - Retired</span><br>Doing business within large institutions is not foreign to Paul van Oosten. First he worked as education coordinator and later as director of the Faculty of Theology and Philosophy at the VU. Later he worked as director at De Diaconie in Amsterdam. An organization committed to a city in which people look out for each other. Enthusiasm and making radical changes typify him. Like converting a building for elderly housing into a social hub with all kinds of social initiatives. So if you have ambitious plans, take a brisk walk with Paul.',
+            '<span style="font-weight:700; color:#1B1042;">Gerrit Hartog - CFO</span><br>As CFO, Gerrit Hartog has seen different worlds. From super commercial to purpose driven organizations. In addition to his work, he develops personally through an experiential therapist training at the Boswijk Institute. His heart for development continues to beat passionately. Gerrit is sensitive, curious, dedicated and is good at zooming in and out on complex situations. Are you looking for a sparring partner who can hold up an honest mirror to you and someone who, by being vulnerable himself, gives space for your (life) questions? Meet Gerrit.'
+        ];
+        let mentorIndex = 0;
+        const cardsDiv = document.getElementById('mentor-cards');
+        const captionDiv = document.getElementById('mentor-caption');
+        function renderMentorCards() {
+            cardsDiv.innerHTML = '';
+            for (let i = -1; i <= 1; i++) {
+                let idx = (mentorIndex + i + mentorImages.length) % mentorImages.length;
+                const card = document.createElement('div');
+                card.style.transition = 'all 0.5s';
+                card.style.width = i === 0 ? '220px' : '120px';
+                card.style.height = i === 0 ? '280px' : '160px';
+                card.style.overflow = 'hidden';
+                card.style.borderRadius = '16px';
+                card.style.boxShadow = '0 2px 12px rgba(41,24,74,0.10)';
+                card.style.background = '#fff';
+                card.style.display = 'flex';
+                card.style.alignItems = 'center';
+                card.style.justifyContent = 'center';
+                card.style.position = 'relative';
+                const img = document.createElement('img');
+                img.src = mentorImages[idx];
+                img.alt = 'Mentor ' + (idx+1);
+                img.style.width = '100%';
+                img.style.height = '100%';
+                img.style.objectFit = 'cover';
+                if (i !== 0) {
+                    img.style.opacity = '0.4';
+                    img.style.filter = 'blur(2px)';
+                } else {
+                    img.style.opacity = '1';
+                    img.style.filter = 'none';
+                }
+                card.appendChild(img);
+                cardsDiv.appendChild(card);
+            }
+            captionDiv.innerHTML = mentorCaptions[mentorIndex];
+        }
+        document.getElementById('mentor-prev').onclick = function() {
+            mentorIndex = (mentorIndex - 1 + mentorImages.length) % mentorImages.length;
+            renderMentorCards();
+        };
+        document.getElementById('mentor-next').onclick = function() {
+            mentorIndex = (mentorIndex + 1) % mentorImages.length;
+            renderMentorCards();
+        };
+        // Initialize
+        renderMentorCards();
+    </script>
+</body>
+<footer class="footer-section">
+    <div class="footer-inner">
+        <div class="footer-locations">
+            <div class="footer-location">
+                <strong>The Nursery</strong><br>
+                Nieuwe Herengracht 18<br>
+                1018 DP Amsterdam
+            </div>
+            <div class="footer-location">
+                <strong>The Nursery</strong><br>
+                Neude 11<br>
+                3512 AE Utrecht
+            </div>
+            <div class="footer-location">
+                <strong>The Nursery</strong><br>
+                's-Gravensloot 14<br>
+                3471 BM Woerden
+            </div>
+        </div>
+        <div class="footer-newsletter">
+            <button class="newsletter-btn">Newsletter Signup</button>
+        </div>
+    </div>
+</footer>
+</html>

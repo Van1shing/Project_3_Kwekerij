@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homepage</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+
+<!-- Header Section -->
+    <header>
+        <div class="logo">
+            <a href="{{ url_for('home') }}">
+                <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Website Logo">
+            </a>
+        </div>
+
+        <!-- Navigation Menu -->
+        <nav>
+            <ul>
+                <li><a href="{{ url_for('home') }}#map-section">Locations</a></li>
+                <li><a href="{{ url_for('communities') }}">Communities</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropbtn">Programs</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="{{ url_for('learn_more_blooming') }}">Blooming sessions</a></li>
+                        <li><a href="{{ url_for('learn_more_language_cafe') }}">Language cafe</a></li>
+                        <li><a href="{{ url_for('learn_more_generations') }}">Generations at the Table</a></li>
+                        <li><a href="{{ url_for('learn_more_companies') }}">Companies – Purpose in Action</a></li>
+                        <li><a href="{{ url_for('mentoring') }}">Mentoring</a></li>
+                    </ul>
+                </li>
+                <li><a href="{{ url_for('about') }}">About Us</a></li>
+                <li><a href="{{ url_for('faq') }}">FAQ</a></li>
+                <li><a href="{{ url_for('contact') }}">Contact Us</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main Content Section -->
+    <main>
+        <div class="main-video" style="width: 100%; margin: 0 auto;">
+            <video controls width="100%">
+                <source src="{{ url_for('static', filename='images/Main_Video.mp4') }}" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+        <div class="welcome-section" style="text-align: center; font-family: 'Inter', sans-serif;">
+            <h1>Grow together at De Kwekerij</h1>
+            <p style="margin-top: 32px;">Inspiring sessions, language exchanges and inter-generational dinners that connect Amsterdam's international students, migrants and locals.</p>
+        </div>
+        <hr style="width: 100%; margin: 32px 0; border: 0; border-top: 2px solid #000;">
+        <div style="max-width: 1200px; margin: 0 auto; font-family: 'Inter', sans-serif;">
+            <h2 class="section-title" style="margin-left: 24px;">What we do</h2>
+        </div>
+        <div class="what-we-do-cards">
+            <div class="what-we-do-card">
+                <img src="{{ url_for('static', filename='images/blommers_picture.png') }}" alt="Blooming sessions">
+                <div class="card-overlay">
+                    <h3>Blooming sessions</h3>
+                    <p>Sessions for young adults on choices, passions & mental health.</p>
+                    <a href="{{ url_for('learn_more_blooming') }}" class="learn-more">Learn more &rarr;</a>
+                </div>
+            </div>
+            <div class="what-we-do-card">
+                <img src="{{ url_for('static', filename='images/bloomers_picture_2.png') }}" alt="Language cafe">
+                <div class="card-overlay">
+                    <h3>Language cafe</h3>
+                    <p>Dutch language & culture exchange for newcomers with locals.</p>
+                    <a href="{{ url_for('learn_more_language_cafe') }}" class="learn-more">Learn more &rarr;</a>
+                </div>
+            </div>
+            <div class="what-we-do-card">
+                <img src="{{ url_for('static', filename='images/intergeneration_dinner.png') }}" alt="Generations at the Table">
+                <div class="card-overlay">
+                    <h3>Generations at the Table</h3>
+                    <p>Dinners pairing students and seniors to earn wisdom over food.</p>
+                    <a href="{{ url_for('learn_more_generations') }}" class="learn-more">Learn more &rarr;</a>
+                </div>
+            </div>
+            <div class="what-we-do-card">
+                <img src="{{ url_for('static', filename='images/companies.png') }}" alt="Companies - Purpose in Action">
+                <div class="card-overlay">
+                    <h3>Companies – Purpose in Action</h3>
+                    <p>Workshops turning CSR ideals into concrete impact-driven action.</p>
+                    <a href="{{ url_for('learn_more_companies') }}" class="learn-more">Learn more &rarr;</a>
+                </div>
+            </div>
+        </div>
+        <!-- Collaboration section -->
+        <div class="collaboration-section">
+            <h2>We work together with</h2>
+            <p>Over the years we've partnered with corporates, start-ups and social initiatives.</p>
+        </div>
+        <!-- Activities section -->
+        <div class="activities-section">
+            <h2 class="section-title" style="margin-left: 24px;">Upcoming activities</h2>
+            <div class="activities-list">
+                <div class="activity-card">
+                    <div class="activity-title">How to find out what you want <span class="activity-date" style="color:#F2994A;">| May 20</span></div>
+                    <div class="activity-desc">Join our monthly flowering session. Doors 19:15, program 19:30, drinks after.</div>
+                    <a href="#" class="activity-link">Read more &rarr;</a>
+                </div>
+                <div class="activity-card">
+                    <div class="activity-title">Informal language class <span class="activity-date" style="color:#F2994A;">| Every Tuesday</span></div>
+                    <div class="activity-desc">Improve Dutch & meet new friends in a relaxed setting. Sometimes we go canoeing!</div>
+                    <a href="#" class="activity-link">Sign up &rarr;</a>
+                </div>
+                <div class="activity-card">
+                    <div class="activity-title">Connect for Impact <span class="activity-date" style="color:#F2994A;">| June 3</span></div>
+                    <div class="activity-desc">A day for young adults, seniors, refugees & change-makers to co-create local impact.</div>
+                    <a href="#" class="activity-link">Details &rarr;</a>
+                </div>
+            </div>
+        </div>
+        <!-- Testimonials section -->
+        <div class="testimonials-section">
+            <h2>What others say about us, rotating testimonials</h2>
+            <div class="testimonial">
+                <p>"I especially like that there is a place for reflection and sharing vulnerable stories."</p>
+                <strong>Wendy Stokwielder</strong>
+            </div>
+            <div class="testimonial">
+                <p>"A place where we can discuss topics that affect us all, away from the hustle of daily life."</p>
+                <strong>Dave Severins</strong>
+            </div>
+            <div class="testimonial">
+                <p>"A safe space where personal growth, depth & relaxation meet."</p>
+                <strong>Tjerk Busstra</strong>
+            </div>
+        </div>
+        <!-- Google Map section -->
+        <div class="map-section" id="map-section">
+            <iframe
+                src="https://www.google.com/maps?q=Nieuwe+Herengracht+18,+1018+DP+Amsterdam&output=embed&hl=en"
+                width="100%"
+                height="400"
+                style="border:0;display:block;"
+                allowfullscreen=""
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+        </div>
+        <!-- Footer section -->
+        <footer class="footer-section">
+            <div class="footer-inner">
+                <div class="footer-locations">
+                    <div class="footer-location">
+                        <strong>The Nursery</strong><br>
+                        Nieuwe Herengracht 18<br>
+                        1018 DP Amsterdam
+                    </div>
+                    <div class="footer-location">
+                        <strong>The Nursery</strong><br>
+                        Neude 11<br>
+                        3512 AE Utrecht
+                    </div>
+                    <div class="footer-location">
+                        <strong>The Nursery</strong><br>
+                        's-Gravensloot 14<br>
+                        3471 BM Woerden
+                    </div>
+                </div>
+                <div class="footer-newsletter">
+                    <button class="newsletter-btn">Newsletter Signup</button>
+                </div>
+            </div>
+        </footer>
+    </main>
+
+    <!-- JavaScript Link -->
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>

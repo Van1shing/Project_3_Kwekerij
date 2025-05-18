@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body style="font-family: 'Inter', sans-serif;">
+    <!-- Header Section -->
+    <header>
+        <div class="logo">
+            <a href="{{ url_for('home') }}">
+                <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Website Logo">
+            </a>
+        </div>
+
+        <!-- Navigation Menu -->
+        <nav>
+            <ul>
+                <li><a href="{{ url_for('home') }}#map-section">Locations</a></li>
+                <li><a href="{{ url_for('communities') }}">Communities</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropbtn">Programs</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="{{ url_for('learn_more_blooming') }}">Blooming sessions</a></li>
+                        <li><a href="{{ url_for('learn_more_language_cafe') }}">Language cafe</a></li>
+                        <li><a href="{{ url_for('learn_more_generations') }}">Generations at the Table</a></li>
+                        <li><a href="{{ url_for('learn_more_companies') }}">Companies – Purpose in Action</a></li>
+                        <li><a href="{{ url_for('mentoring') }}">Mentoring</a></li>
+                    </ul>
+                </li>
+                <li><a href="{{ url_for('about') }}">About Us</a></li>
+                <li><a href="{{ url_for('faq') }}">FAQ</a></li>
+                <li><a href="{{ url_for('contact') }}">Contact Us</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Breadcrumb Navigation -->
+    <div class="breadcrumb">
+        <a href="{{ url_for('home') }}">Home</a> > About Us
+    </div>
+
+    <!-- Main Content Section -->
+    <main>
+        <div class="about-section">
+            <section style="max-width: 1200px; margin: 48px auto 0 auto; padding: 0 24px;">
+                <h1 style="font-size: 2.2rem; font-weight: 700; color: #191919; margin-bottom: 18px;">Who We Are</h1>
+                <p style="font-size: 1.08rem; color: #191919; max-width: 800px; line-height: 1.7; margin-bottom: 0;">
+                    At De Kwekerij, we are a growing community of open-minded individuals committed to personal growth, meaningful connection, and social impact.<br>
+                    We aim to bring together people from all walks of life to explore ideas, challenge assumptions, and build bridges between diverse perspectives. Whether you're a curious newcomer or a long-time local, De Kwekerij is a space where everyone is invited to reflect, connect, and flourish together.
+                </p>
+            </section>
+            <section style="background: #29184A; margin: 48px 0 0 0; padding: 48px 0; width: 100%;">
+                <div style="max-width: 1200px; margin: 0 auto; display: flex; flex-direction: row; align-items: flex-start; padding: 0 24px;">
+                    <div style="flex: 1;">
+                        <h2 style="font-size: 2rem; font-weight: 700; color: #fff; margin-bottom: 18px;">What We Do</h2>
+                        <p style="font-size: 1.08rem; color: #fff; line-height: 1.7; max-width: 700px;">
+                            We organize interactive events, workshops, and dialogues that focus on self-development, social cohesion, and intercultural exchange. Our activities create space for honest conversation, playful experimentation, and collaborative learning. From discussion dinners and storytelling nights to creative labs and theme-based sessions, we aim to make personal and societal growth accessible and enjoyable. Increasingly, we are expanding our offerings to include international and English-speaking audiences, making our community more inclusive and welcoming for all.
+                        </p>
+                    </div>
+                </div>
+            </section>
+            <section style="max-width: 1200px; margin: 48px auto 0 auto; padding: 0 24px; display: flex; flex-wrap: wrap; align-items: flex-start; gap: 40px;">
+                <div style="flex: 0 0 320px; max-width: 340px; align-self: flex-start;">
+                    <img src="{{ url_for('static', filename='images/about_us_pic.png') }}" alt="Guy Wijnen - Initiator" style="width: 100%; border-radius: 18px; object-fit: cover;">
+                </div>
+                <div style="flex: 1 1 340px; min-width: 320px; max-width: 600px;">
+                    <h2 style="font-size: 1.5rem; font-weight: 700; color: #191919; margin-bottom: 18px;">Initiator: Guy Wijnen</h2>
+                    <p style="font-size: 1.08rem; color: #191919; line-height: 1.7;">
+                        Guy Wijnen is the founder and driving force behind De Kwekerij. For nearly a decade, he has dedicated himself to creating spaces where young adults can reflect on life's big questions—peace, purpose, setbacks, and ideals. His inspiration for De Kwekerij came from a desire to support people during the often-overlooked yet transformative stage of early adulthood. But over time, his vision grew: De Kwekerij became more than just a place for young adults—it became a bridge between generations, cultures, and life experiences.<br><br>
+                        For Guy, inclusion and community are not abstract ideals—they're daily practices. He is committed to bringing together people from different backgrounds, including newcomers and the elderly, in an environment where everyone feels safe, seen, and heard.
+                    </p>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer class="footer-section">
+        <div class="footer-inner">
+            <div class="footer-locations">
+                <div class="footer-location">
+                    <strong>The Nursery</strong><br>
+                    Nieuwe Herengracht 18<br>
+                    1018 DP Amsterdam
+                </div>
+                <div class="footer-location">
+                    <strong>The Nursery</strong><br>
+                    Neude 11<br>
+                    3512 AE Utrecht
+                </div>
+                <div class="footer-location">
+                    <strong>The Nursery</strong><br>
+                    's-Gravensloot 14<br>
+                    3471 BM Woerden
+                </div>
+            </div>
+            <div class="footer-newsletter">
+                <button class="newsletter-btn">Newsletter Signup</button>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript Link -->
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html> 

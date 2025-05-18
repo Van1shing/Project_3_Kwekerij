@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frequently Asked Questions</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        .faq-container { max-width: 700px; margin: 40px auto; }
+        .faq-title { text-align: center; font-size: 2rem; font-weight: bold; margin-bottom: 32px; }
+        .faq-item { border-bottom: 1px solid #ddd; }
+        .faq-question {
+            cursor: pointer;
+            padding: 20px 0;
+            font-size: 1.1rem;
+            font-weight: 700;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-family: 'Inter', sans-serif;
+            color: #29184A;
+        }
+        .faq-answer {
+            display: none;
+            padding: 0 0 20px 0;
+            color: #333;
+            font-size: 1rem;
+        }
+        .faq-item.active .faq-answer { display: block; }
+        .faq-arrow { transition: transform 0.2s; }
+        .faq-item.active .faq-arrow { transform: rotate(180deg); }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="logo">
+            <a href="{{ url_for('home') }}">
+                <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Website Logo">
+            </a>
+        </div>
+
+        <!-- Navigation Menu -->
+        <nav>
+            <ul>
+                <li><a href="{{ url_for('home') }}#map-section">Locations</a></li>
+                <li><a href="{{ url_for('communities') }}">Communities</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropbtn">Programs</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="{{ url_for('learn_more_blooming') }}">Blooming sessions</a></li>
+                        <li><a href="{{ url_for('learn_more_language_cafe') }}">Language cafe</a></li>
+                        <li><a href="{{ url_for('learn_more_generations') }}">Generations at the Table</a></li>
+                        <li><a href="{{ url_for('learn_more_companies') }}">Companies – Purpose in Action</a></li>
+                        <li><a href="{{ url_for('mentoring') }}">Mentoring</a></li>
+                    </ul>
+                </li>
+                <li><a href="{{ url_for('about') }}">About Us</a></li>
+                <li><a href="{{ url_for('faq') }}">FAQ</a></li>
+                <li><a href="{{ url_for('contact') }}">Contact Us</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Breadcrumb Navigation -->
+    <div class="breadcrumb">
+        <a href="{{ url_for('home') }}">Home</a> > FAQ
+    </div>
+
+    <!-- Main Content Section -->
+    <main>
+        <div class="faq-container">
+            <div class="faq-title">Frequently Asked Questions</div>
+            <div class="faq-list">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        1. Do I have to pay to participate in the programs?
+                        <span class="faq-arrow">&#9660;</span>
+                    </div>
+                    <div class="faq-answer" style="font-family: 'Inter', sans-serif; color: #29184A;">
+We aim to keep De Kwekerij as accessible as possible. So you can enter all of our flourishing classes for free. We ask for a donation afterwards. If you really like it you can become a member for €7 a moth. Some of our events include a dinner and have a small fee. If money is a barrier, just let us know — we'll always look for a solution.
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        2. Who can participate in De Kwekerij's programs?
+                        <span class="faq-arrow">&#9660;</span>
+                    </div>
+                    <div class="faq-answer"></div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        3. Do I need to prepare anything before attending?
+                        <span class="faq-arrow">&#9660;</span>
+                    </div>
+                    <div class="faq-answer"></div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        4. Can I volunteer or collaborate with De Kwekerij?
+                        <span class="faq-arrow">&#9660;</span>
+                    </div>
+                    <div class="faq-answer" style="font-family: 'Inter', sans-serif; color: #29184A;">
+Absolutely! De Kwekerij thrives thanks to people who want to share their time, talents, or ideas. Whether you're a natural host, have a great concept for a new session, or want to partner up in your city — drop us a line. We'd love to meet you over a cup of coffee or tea.
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        5. Can I join multiple programs?
+                        <span class="faq-arrow">&#9660;</span>
+                    </div>
+                    <div class="faq-answer"></div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        6. Are the programs in Dutch or English?
+                        <span class="faq-arrow">&#9660;</span>
+                    </div>
+                    <div class="faq-answer"></div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        7. What makes De Kwekerij different from other personal development programs?
+                        <span class="faq-arrow">&#9660;</span>
+                    </div>
+                    <div class="faq-answer" style="font-family: 'Inter', sans-serif; color: #29184A;">
+At De Kwekerij we believe personal growth comes by exchanging knowledge and sharing experiences with others. We are community driven which means we develop people by discovering their passions and talents and experiment in safe situations. No pressure to perform, but real conversations, honest connection, and space to breathe.
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        8. Is it common for people to attend events on their own?
+                        <span class="faq-arrow">&#9660;</span>
+                    </div>
+                    <div class="faq-answer" style="font-family: 'Inter', sans-serif; color: #29184A;">
+Definitely. In fact, many people come solo — and leave with new conversations, insights, or even friendships. You don't have to put on a show — just being yourself is more than enough.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <div style="max-width: 1200px; margin: 0 auto; font-family: 'Inter', sans-serif;">
+        <h2 class="section-title" style="margin-left: 24px;">What we do</h2>
+    </div>
+    <div class="what-we-do-cards">
+        <div class="what-we-do-card">
+            <img src="{{ url_for('static', filename='images/blommers_picture.png') }}" alt="Blooming sessions">
+            <div class="card-overlay">
+                <h3>Blooming sessions</h3>
+                <p>Sessions for young adults on choices, passions & mental health.</p>
+                <a href="{{ url_for('learn_more_blooming') }}" class="learn-more">Learn more &rarr;</a>
+            </div>
+        </div>
+        <div class="what-we-do-card">
+            <img src="{{ url_for('static', filename='images/bloomers_picture_2.png') }}" alt="Language cafe">
+            <div class="card-overlay">
+                <h3>Language cafe</h3>
+                <p>Dutch language & culture exchange for newcomers with locals.</p>
+                <a href="{{ url_for('learn_more_language_cafe') }}" class="learn-more">Learn more &rarr;</a>
+            </div>
+        </div>
+        <div class="what-we-do-card">
+            <img src="{{ url_for('static', filename='images/intergeneration_dinner.png') }}" alt="Generations at the Table">
+            <div class="card-overlay">
+                <h3>Generations at the Table</h3>
+                <p>Dinners pairing students and seniors to earn wisdom over food.</p>
+                <a href="{{ url_for('learn_more_generations') }}" class="learn-more">Learn more &rarr;</a>
+            </div>
+        </div>
+        <div class="what-we-do-card">
+            <img src="{{ url_for('static', filename='images/companies.png') }}" alt="Companies - Purpose in Action">
+            <div class="card-overlay">
+                <h3>Companies – Purpose in Action</h3>
+                <p>Workshops turning CSR ideals into concrete impact-driven action.</p>
+                <a href="{{ url_for('learn_more_companies') }}" class="learn-more">Learn more &rarr;</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript Link -->
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+    <script>
+        document.querySelectorAll('.faq-question').forEach(q => {
+            q.addEventListener('click', function() {
+                const item = this.parentElement;
+                item.classList.toggle('active');
+            });
+        });
+    </script>
+
+    <footer class="footer-section">
+        <div class="footer-inner">
+            <div class="footer-locations">
+                <div class="footer-location">
+                    <strong>The Nursery</strong><br>
+                    Nieuwe Herengracht 18<br>
+                    1018 DP Amsterdam
+                </div>
+                <div class="footer-location">
+                    <strong>The Nursery</strong><br>
+                    Neude 11<br>
+                    3512 AE Utrecht
+                </div>
+                <div class="footer-location">
+                    <strong>The Nursery</strong><br>
+                    's-Gravensloot 14<br>
+                    3471 BM Woerden
+                </div>
+            </div>
+            <div class="footer-newsletter">
+                <button class="newsletter-btn">Newsletter Signup</button>
+            </div>
+        </div>
+    </footer>
+</body>
+</html> 

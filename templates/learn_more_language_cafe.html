@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Language cafe</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body style="font-family: 'Inter', sans-serif; background: #f7f7fa;">
+    <!-- Header Section -->
+    <header>
+        <div class="logo">
+            <a href="{{ url_for('home') }}">
+                <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Website Logo">
+            </a>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="{{ url_for('home') }}#map-section">Locations</a></li>
+                <li><a href="{{ url_for('communities') }}">Communities</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropbtn">Programs</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="{{ url_for('learn_more_blooming') }}">Blooming sessions</a></li>
+                        <li><a href="{{ url_for('learn_more_language_cafe') }}">Language cafe</a></li>
+                        <li><a href="{{ url_for('learn_more_generations') }}">Generations at the Table</a></li>
+                        <li><a href="{{ url_for('learn_more_companies') }}">Companies – Purpose in Action</a></li>
+                        <li><a href="{{ url_for('mentoring') }}">Mentoring</a></li>
+                    </ul>
+                </li>
+                <li><a href="{{ url_for('about') }}">About Us</a></li>
+                <li><a href="{{ url_for('faq') }}">FAQ</a></li>
+                <li><a href="{{ url_for('contact') }}">Contact Us</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <!-- Top Banner -->
+        <div style="width: 100%; min-height: 220px; background: url('{{ url_for('static', filename='images/com_1.png') }}') center center/cover no-repeat; display: flex; flex-direction: column; justify-content: center; align-items: center; position: relative;">
+            <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(41,24,74,0.32); z-index: 1;"></div>
+            <div style="width: 100%; padding: 48px 0 32px 0; text-align: center; position: relative; z-index: 2;">
+                <h1 style="font-size: 2rem; font-weight: 700; color: #fff; margin-bottom: 12px; text-shadow: 0 2px 8px rgba(41,24,74,0.18);">Language Cafe</h1>
+                <div style="font-size: 1.08rem; color: #fff; font-weight: 500; max-width: 700px; margin: 0 auto; text-shadow: 0 2px 8px rgba(41,24,74,0.18);">
+                    Join us while learning Dutch language in a relaxed and informal setting.
+                </div>
+            </div>
+        </div>
+        <!-- Main Content Section -->
+        <div style="width: 100%; min-height: 320px; background: url('{{ url_for('static', filename='images/bloomers_picture_2.png') }}') center center/cover no-repeat; display: flex; align-items: flex-end; position: relative;">
+            <div style="width: 100%; background: rgba(255,255,255,0.92); padding: 64px 0 72px 0; display: flex; flex-direction: column; align-items: center;">
+                <div style="max-width: 800px; width: 100%; padding: 0 32px;">
+                    <h2 style="font-size: 1.5rem; font-weight: 700; color: #232323; margin-bottom: 8px;">Dutch language lessons for newcomers</h2>
+                    <div style="color: #F2994A; font-size: 1rem; font-weight: 600; margin-bottom: 8px;">Every Tue 18 · 19:30–21:00</div>
+                    <div style="font-size: 1.05rem; color: #232323; line-height: 1.7; margin-bottom: 32px;">
+                        At the Language Café, we chat about all kinds of topics — from talents and hobbies to family and everyday life. We also include seasonal themes that fit the time of year, and regularly explore Dutch culture through books, art, and customs.<br><br>
+                        Now and then, we do something fun together, like going bouldering or canoeing. You can also get matched with a language buddy to practice even more.<br>
+                        Curious? Sign up below!
+                    </div>
+                    <div style="display: flex; justify-content: center;">
+                        <button style="background: #F2994A; color: #fff; font-family: 'Inter', sans-serif; font-weight: 600; font-size: 1rem; border: none; border-radius: 8px; padding: 12px 36px; cursor: pointer;">Join Us</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Explore More Section -->
+        <div style="max-width: 1200px; margin: 64px auto 0 auto; font-family: 'Inter', sans-serif;">
+            <h2 class="section-title" style="margin-left: 24px;">Explore More</h2>
+        </div>
+        <div class="what-we-do-cards">
+            <div class="what-we-do-card">
+                <img src="{{ url_for('static', filename='images/blommers_picture.png') }}" alt="Blooming sessions">
+                <div class="card-overlay">
+                    <h3>Blooming sessions</h3>
+                    <p>Sessions for young adults on choices, passions & mental health.</p>
+                    <a href="{{ url_for('learn_more_blooming') }}" class="learn-more">Learn more &rarr;</a>
+                </div>
+            </div>
+            <div class="what-we-do-card">
+                <img src="{{ url_for('static', filename='images/intergeneration_dinner.png') }}" alt="Generations at the Table">
+                <div class="card-overlay">
+                    <h3>Generations at the Table</h3>
+                    <p>Dinners pairing students and seniors to earn wisdom over food.</p>
+                    <a href="{{ url_for('learn_more_generations') }}" class="learn-more">Learn more &rarr;</a>
+                </div>
+            </div>
+            <div class="what-we-do-card">
+                <img src="{{ url_for('static', filename='images/companies.png') }}" alt="Companies - Purpose in Action">
+                <div class="card-overlay">
+                    <h3>Companies – Purpose in Action</h3>
+                    <p>Workshops turning CSR ideals into concrete impact-driven action.</p>
+                    <a href="{{ url_for('learn_more_companies') }}" class="learn-more">Learn more &rarr;</a>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer class="footer-section">
+        <div class="footer-inner">
+            <div class="footer-locations">
+                <div class="footer-location">
+                    <strong>The Nursery</strong><br>
+                    Nieuwe Herengracht 18<br>
+                    1018 DP Amsterdam
+                </div>
+                <div class="footer-location">
+                    <strong>The Nursery</strong><br>
+                    Neude 11<br>
+                    3512 AE Utrecht
+                </div>
+                <div class="footer-location">
+                    <strong>The Nursery</strong><br>
+                    's-Gravensloot 14<br>
+                    3471 BM Woerden
+                </div>
+            </div>
+            <div class="footer-newsletter">
+                <button class="newsletter-btn">Newsletter Signup</button>
+            </div>
+        </div>
+    </footer>
+</body>
+</html> 

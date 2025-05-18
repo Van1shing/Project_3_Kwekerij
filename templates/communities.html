@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Communities</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body style="font-family: 'Inter', sans-serif;">
+    <!-- Header Section -->
+    <header>
+        <div class="logo">
+            <a href="{{ url_for('home') }}">
+                <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Website Logo">
+            </a>
+        </div>
+
+        <!-- Navigation Menu -->
+        <nav>
+            <ul>
+                <li><a href="{{ url_for('home') }}#map-section">Locations</a></li>
+                <li><a href="{{ url_for('communities') }}">Communities</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropbtn">Programs</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="{{ url_for('learn_more_blooming') }}">Blooming sessions</a></li>
+                        <li><a href="{{ url_for('learn_more_language_cafe') }}">Language cafe</a></li>
+                        <li><a href="{{ url_for('learn_more_generations') }}">Generations at the Table</a></li>
+                        <li><a href="{{ url_for('learn_more_companies') }}">Companies – Purpose in Action</a></li>
+                        <li><a href="{{ url_for('mentoring') }}">Mentoring</a></li>
+                    </ul>
+                </li>
+                <li><a href="{{ url_for('about') }}">About Us</a></li>
+                <li><a href="{{ url_for('faq') }}">FAQ</a></li>
+                <li><a href="{{ url_for('contact') }}">Contact Us</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Breadcrumb Navigation -->
+    <div class="breadcrumb">
+        <a href="{{ url_for('home') }}">Home</a> > Communities
+    </div>
+
+    <!-- Main Content Section -->
+    <main>
+        <div class="communities-section" style="font-family: 'Inter', sans-serif;">
+            <section style="max-width: 900px; margin: 48px auto 0 auto; padding: 0 24px; text-align: center;">
+                <h1 style="font-size: 2.2rem; font-weight: 700; color: #191919; margin-bottom: 8px;">Join Our Community</h1>
+                <div style="font-size: 1.15rem; color: #191919; margin-bottom: 32px;">Are you an international student? A newcomer to Amsterdam? You're welcome here.</div>
+            </section>
+            <section style="background: #29184A; margin: 0 0 0 0; padding: 28px 0 24px 0; width: 100%;">
+                <div style="max-width: 900px; margin: 0 auto; padding: 0 24px;">
+                    <div style="color: #fff; font-size: 1.05rem; font-weight: 600; text-align: left;">
+                        At De Kwekerij, we believe in the power of community. Our mission is to create a welcoming space for everyone, regardless of where you come from. Whether you're an international student, a recent arrival in Amsterdam, or a local resident, we invite you to be part of our vibrant and inclusive community. Discover friendship, creativity, and a sense of belonging here.
+                    </div>
+                </div>
+            </section>
+            <section style="max-width: 900px; margin: 40px auto 0 auto; padding: 0 24px;">
+                <h2 style="font-size: 1.2rem; font-weight: 700; color: #29184A; margin-bottom: 18px; text-align: left;">For Whom</h2>
+                <div style="display: flex; flex-wrap: wrap; gap: 32px; align-items: center;">
+                    <div style="flex: 1 1 320px; min-width: 280px; max-width: 420px;">
+                        <ul style="padding-left: 18px; color: #191919; font-size: 1.05rem; line-height: 1.7;">
+                            <li><b>Young Adults</b><br>Explore new horizons and build lifetime connections. Young adults from all walks of life find a supportive network at De Kwekerij, where personal growth and shared experiences are at the forefront.</li>
+                            <li style="margin-top: 18px;"><b>Refugees</b><br>Find a safe haven and community support at De Kwekerij. We are committed to providing a friendly and resourceful environment where refugees can connect, learn, and thrive together.</li>
+                            <li style="margin-top: 18px;"><b>Locals</b><br>Join a community that values diversity and local pride. Our local members bring a wealth of knowledge and a warm heart, ensuring everyone feels at home in Amsterdam.</li>
+                        </ul>
+                    </div>
+                    <div style="flex: 1 1 320px; min-width: 280px; max-width: 420px; display: flex; flex-direction: column; gap: 24px; justify-content: center;">
+                        <img src="{{ url_for('static', filename='images/com_1.png') }}" alt="Community 1" style="width: 100%; border-radius: 10px; object-fit: cover; display: block;">
+                    </div>
+                </div>
+            </section>
+            <section style="max-width: 900px; margin: 32px auto 0 auto; padding: 0 24px; display: flex; flex-wrap: wrap; gap: 32px; align-items: flex-start;">
+                <div style="flex: 1 1 320px; min-width: 280px; max-width: 420px;">
+                    <img src="{{ url_for('static', filename='images/com_2.png') }}" alt="Community 2" style="width: 100%; border-radius: 10px; object-fit: cover;">
+                    <div style="font-size: 0.98rem; color: #191919; margin-top: 8px;">"As a refugee, I found hope and friends at de Kwekerij. It's a place where I can be myself."<br><span style="font-size: 0.95rem; color: #444;">– Ahmed, Refugee from Syria</span></div>
+                </div>
+                <div style="flex: 1 1 320px; min-width: 280px; max-width: 420px; display: flex; flex-direction: column; gap: 24px;">
+                    <div style="font-size: 0.98rem; color: #191919; margin-bottom: 16px; align-self: flex-start;">"Joining de Kwekerij opened up a world of warmth and acceptance for me as an international student. It's more than just a community; it's a family."<br><span style="font-size: 0.95rem; color: #444;">– Priya, Student from India</span></div>
+                    <img src="{{ url_for('static', filename='images/com_3.png') }}" alt="Community 3" style="width: 100%; border-radius: 10px; object-fit: cover; margin-top: 32px; display: block;">
+                </div>
+            </section>
+        </div>
+    </main>
+    <div style="width: 100%; display: flex; justify-content: center; align-items: center; margin: 48px 0 32px 0;">
+        <a href="{{ url_for('contact') }}" style="background: #F2994A; color: #fff; font-family: 'Inter', sans-serif; font-weight: 600; font-size: 1rem; border: none; border-radius: 8px; padding: 10px 32px; cursor: pointer; box-shadow: 0 2px 8px rgba(41,24,74,0.08); text-decoration: none; display: inline-block; text-align: center;">Join Us Now</a>
+    </div>
+
+    <!-- JavaScript Link -->
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+
+    <footer class="footer-section">
+        <div class="footer-inner">
+            <div class="footer-locations">
+                <div class="footer-location">
+                    <strong>The Nursery</strong><br>
+                    Nieuwe Herengracht 18<br>
+                    1018 DP Amsterdam
+                </div>
+                <div class="footer-location">
+                    <strong>The Nursery</strong><br>
+                    Neude 11<br>
+                    3512 AE Utrecht
+                </div>
+                <div class="footer-location">
+                    <strong>The Nursery</strong><br>
+                    's-Gravensloot 14<br>
+                    3471 BM Woerden
+                </div>
+            </div>
+            <div class="footer-newsletter">
+                <button class="newsletter-btn">Newsletter Signup</button>
+            </div>
+        </div>
+    </footer>
+</body>
+</html> 

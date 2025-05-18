@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blooming sessions</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body style="font-family: 'Inter', sans-serif; background: #f7f7fa;">
+    <!-- Header Section -->
+    <header>
+        <div class="logo">
+            <a href="{{ url_for('home') }}">
+                <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Website Logo">
+            </a>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="{{ url_for('home') }}#map-section">Locations</a></li>
+                <li><a href="{{ url_for('communities') }}">Communities</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropbtn">Programs</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="{{ url_for('learn_more_blooming') }}">Blooming sessions</a></li>
+                        <li><a href="{{ url_for('learn_more_language_cafe') }}">Language cafe</a></li>
+                        <li><a href="{{ url_for('learn_more_generations') }}">Generations at the Table</a></li>
+                        <li><a href="{{ url_for('learn_more_companies') }}">Companies – Purpose in Action</a></li>
+                        <li><a href="{{ url_for('mentoring') }}">Mentoring</a></li>
+                    </ul>
+                </li>
+                <li><a href="{{ url_for('about') }}">About Us</a></li>
+                <li><a href="{{ url_for('faq') }}">FAQ</a></li>
+                <li><a href="{{ url_for('contact') }}">Contact Us</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <!-- Top Banner -->
+        <div style="width: 100%; min-height: 260px; background: url('{{ url_for('static', filename='images/blommers_picture.png') }}') center center/cover no-repeat; display: flex; flex-direction: column; justify-content: center; align-items: center; position: relative;">
+            <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(255,255,255,0.65); z-index: 1;"></div>
+            <div style="background: rgba(255,255,255,0.0); width: 100%; padding: 48px 0 32px 0; text-align: center; position: relative; z-index: 2;">
+                <h1 style="font-size: 2rem; font-weight: 700; color: #29184A; margin-bottom: 12px;">Bloom Classes & Do-Sessions</h1>
+                <div style="font-size: 1.1rem; color: #191919; font-weight: 600; max-width: 700px; margin: 0 auto; text-shadow: 0 2px 8px rgba(255,255,255,0.2);">
+                    Come as you are — solo or with friends. Every session is a relaxed space to meet new people, swap stories and leave with a concrete next step for your own growth.
+                </div>
+            </div>
+        </div>
+        <!-- What is a Bloom Class -->
+        <div style="max-width: 900px; margin: 32px auto 0 auto; background: #fff; border-radius: 4px; padding: 28px 32px 20px 32px;">
+            <h2 style="font-size: 1.15rem; font-weight: 700; color: #191919; margin-bottom: 10px;">What's a Bloom Class?</h2>
+            <div style="font-size: 1rem; color: #191919; line-height: 1.7;">
+                Bloom Classes are bite-sized workshops where we dive into the questions that rarely fit into everyday routines: life, love, career, friendship and identity. We mix mini-lectures with creative, sometimes mildly disruptive exercises so you head home with fresh insight and an action step you can try tomorrow.
+            </div>
+        </div>
+        <!-- Upcoming Sessions -->
+        <div style="max-width: 900px; margin: 48px auto 0 auto;">
+            <h2 style="font-size: 1.15rem; font-weight: 700; color: #191919; margin-bottom: 18px; margin-left: 8px;">Upcoming Sessions</h2>
+            <div style="display: flex; gap: 24px; flex-wrap: wrap; justify-content: flex-start;">
+                <div style="flex: 1 1 240px; min-width: 240px; max-width: 300px; background: url('{{ url_for('static', filename='images/blommer_1.png') }}') center center/cover no-repeat; border-radius: 6px; overflow: hidden; position: relative; min-height: 240px; border: 1px solid #eee;">
+                    <div style="background: rgba(41,24,74,0.08); width: 100%; height: 100%; position: absolute; top: 0; left: 0;"></div>
+                    <div style="position: relative; z-index: 2; padding: 18px 18px 12px 18px; color: #29184A; font-size: 1rem; font-weight: 700;">
+                        What If We Disagree?<br>
+                        <span style="font-size: 0.95rem; font-weight: 400; color: #29184A;">Tue 18 Jun · 19:30–21:00</span>
+                        <div style="font-size: 0.97rem; font-weight: 400; color: #29184A; margin: 10px 0 18px 0;">
+                            How can we handle conflict without losing connection? Practise concrete listening & response tools you can apply the next day.
+                        </div>
+                        <button style="background: #F2994A; color: #fff; font-family: 'Inter', sans-serif; font-weight: 600; font-size: 1rem; border: none; border-radius: 6px; padding: 7px 22px; cursor: pointer;">Join Us</button>
+                    </div>
+                </div>
+                <div style="flex: 1 1 240px; min-width: 240px; max-width: 300px; background: url('{{ url_for('static', filename='images/blommer_2.png') }}') center center/cover no-repeat; border-radius: 6px; overflow: hidden; position: relative; min-height: 240px; border: 1px solid #eee;">
+                    <div style="background: rgba(41,24,74,0.08); width: 100%; height: 100%; position: absolute; top: 0; left: 0;"></div>
+                    <div style="position: relative; z-index: 2; padding: 18px 18px 12px 18px; color: #29184A; font-size: 1rem; font-weight: 700;">
+                        When Are You Productive Enough?<br>
+                        <span style="font-size: 0.95rem; font-weight: 400; color: #29184A;">Tue 16 Jul · 19:30–21:00</span>
+                        <div style="font-size: 0.97rem; font-weight: 400; color: #29184A; margin: 10px 0 18px 0;">
+                            Hustle culture vs healthy pacing — map your personal "good-enough" zone and create a realistic action plan.
+                        </div>
+                        <button style="background: #F2994A; color: #fff; font-family: 'Inter', sans-serif; font-weight: 600; font-size: 1rem; border: none; border-radius: 6px; padding: 7px 22px; cursor: pointer;">Join Us</button>
+                    </div>
+                </div>
+                <div style="flex: 1 1 240px; min-width: 240px; max-width: 300px; background: url('{{ url_for('static', filename='images/blommer_3.png') }}') center center/cover no-repeat; border-radius: 6px; overflow: hidden; position: relative; min-height: 240px; border: 1px solid #eee;">
+                    <div style="background: rgba(41,24,74,0.08); width: 100%; height: 100%; position: absolute; top: 0; left: 0;"></div>
+                    <div style="position: relative; z-index: 2; padding: 18px 18px 12px 18px; color: #29184A; font-size: 1rem; font-weight: 700;">
+                        How Do You Discover What You Want?<br>
+                        <span style="font-size: 0.95rem; font-weight: 400; color: #29184A;">Tue 20 Aug · 19:30–21:00</span>
+                        <div style="font-size: 0.97rem; font-weight: 400; color: #29184A; margin: 10px 0 18px 0;">
+                            Clarify your core values, test quick "mini-experiments" and walk away with your next concrete step.
+                        </div>
+                        <button style="background: #F2994A; color: #fff; font-family: 'Inter', sans-serif; font-weight: 600; font-size: 1rem; border: none; border-radius: 6px; padding: 7px 22px; cursor: pointer;">Join Us</button>
+                    </div>
+                </div>
+            </div>
+            <div style="font-size: 0.98rem; color: #444; margin-top: 18px; margin-left: 8px;">Want to book a private Bloom Class for your team or community? <a href="{{ url_for('contact') }}" style="color: #29184A; text-decoration: underline;">Contact us</a> and let's create a custom session.</div>
+        </div>
+        <!-- What Can You Expect -->
+        <div style="max-width: 900px; margin: 56px auto 0 auto;">
+            <h2 style="font-size: 1.15rem; font-weight: 700; color: #191919; margin-bottom: 18px; margin-left: 8px;">What Can You Expect?</h2>
+            <div style="display: flex; gap: 18px; flex-wrap: nowrap; justify-content: space-between;">
+                <div style="flex: 0 0 1; width: 180px; height: 130px; background: #fff; border-radius: 8px; box-shadow: 0 2px 8px rgba(41,24,74,0.06); padding: 18px 14px 14px 14px; border: 1px solid #eee; display: flex; flex-direction: column; font-family: 'Inter', sans-serif;">
+                    <div style="font-weight: 700; color: #29184A; margin-bottom: 8px;">Group size</div>
+                    <div style="font-size: 0.98rem; color: #191919;">A cosy circle of ± 20 people — enough voices for fresh views, small enough for real talk.</div>
+                </div>
+                <div style="flex: 0 0 1; width: 180px; height: 130px; background: #fff; border-radius: 8px; box-shadow: 0 2px 8px rgba(41,24,74,0.06); padding: 18px 14px 14px 14px; border: 1px solid #eee; display: flex; flex-direction: column; font-family: 'Inter', sans-serif;">
+                    <div style="font-weight: 700; color: #29184A; margin-bottom: 8px;">It's okay to come solo!</div>
+                    <div style="font-size: 0.98rem; color: #191919;">Most participants arrive on their own. Within minutes you'll swap stories with new faces.</div>
+                </div>
+                <div style="flex: 0 0 1; width: 180px; height: 130px; background: #fff; border-radius: 8px; box-shadow: 0 2px 8px rgba(41,24,74,0.06); padding: 18px 14px 14px 14px; border: 1px solid #eee; display: flex; flex-direction: column; font-family: 'Inter', sans-serif;">
+                    <div style="font-weight: 700; color: #29184A; margin-bottom: 8px;">Language</div>
+                    <div style="font-size: 0.98rem; color: #191919;">All sessions run in English</div>
+                </div>
+                <div style="flex: 0 0 1; width: 180px; height: 130px; background: #fff; border-radius: 8px; box-shadow: 0 2px 8px rgba(41,24,74,0.06); padding: 18px 14px 14px 14px; border: 1px solid #eee; display: flex; flex-direction: column; font-family: 'Inter', sans-serif;">
+                    <div style="font-weight: 700; color: #29184A; margin-bottom: 8px;">Take-home step</div>
+                    <div style="font-size: 0.98rem; color: #191919;">You'll leave with one concrete experiment or reflection to try during the week.</div>
+                </div>
+            </div>
+        </div>
+        <!-- Explore More Section -->
+        <div style="max-width: 1200px; margin: 64px auto 0 auto; font-family: 'Inter', sans-serif;">
+            <h2 class="section-title" style="margin-left: 24px;">Explore More</h2>
+        </div>
+        <div class="what-we-do-cards">
+            <div class="what-we-do-card">
+                <img src="{{ url_for('static', filename='images/bloomers_picture_2.png') }}" alt="Language cafe">
+                <div class="card-overlay">
+                    <h3>Language cafe</h3>
+                    <p>Dutch language & culture exchange for newcomers with locals.</p>
+                    <a href="{{ url_for('learn_more_language_cafe') }}" class="learn-more">Learn more &rarr;</a>
+                </div>
+            </div>
+            <div class="what-we-do-card">
+                <img src="{{ url_for('static', filename='images/intergeneration_dinner.png') }}" alt="Generations at the Table">
+                <div class="card-overlay">
+                    <h3>Generations at the Table</h3>
+                    <p>Dinners pairing students and seniors to earn wisdom over food.</p>
+                    <a href="{{ url_for('learn_more_generations') }}" class="learn-more">Learn more &rarr;</a>
+                </div>
+            </div>
+            <div class="what-we-do-card">
+                <img src="{{ url_for('static', filename='images/companies.png') }}" alt="Companies - Purpose in Action">
+                <div class="card-overlay">
+                    <h3>Companies – Purpose in Action</h3>
+                    <p>Workshops turning CSR ideals into concrete impact-driven action.</p>
+                    <a href="{{ url_for('learn_more_companies') }}" class="learn-more">Learn more &rarr;</a>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer class="footer-section">
+        <div class="footer-inner">
+            <div class="footer-locations">
+                <div class="footer-location">
+                    <strong>The Nursery</strong><br>
+                    Nieuwe Herengracht 18<br>
+                    1018 DP Amsterdam
+                </div>
+                <div class="footer-location">
+                    <strong>The Nursery</strong><br>
+                    Neude 11<br>
+                    3512 AE Utrecht
+                </div>
+                <div class="footer-location">
+                    <strong>The Nursery</strong><br>
+                    's-Gravensloot 14<br>
+                    3471 BM Woerden
+                </div>
+            </div>
+            <div class="footer-newsletter">
+                <button class="newsletter-btn">Newsletter Signup</button>
+            </div>
+        </div>
+    </footer>
+</body>
+</html> 

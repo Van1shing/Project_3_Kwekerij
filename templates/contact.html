@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="logo">
+            <a href="{{ url_for('home') }}">
+                <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Website Logo">
+            </a>
+        </div>
+
+        <!-- Navigation Menu -->
+        <nav>
+            <ul>
+                <li><a href="{{ url_for('home') }}#map-section">Locations</a></li>
+                <li><a href="{{ url_for('communities') }}">Communities</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropbtn">Programs</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="{{ url_for('learn_more_blooming') }}">Blooming sessions</a></li>
+                        <li><a href="{{ url_for('learn_more_language_cafe') }}">Language cafe</a></li>
+                        <li><a href="{{ url_for('learn_more_generations') }}">Generations at the Table</a></li>
+                        <li><a href="{{ url_for('learn_more_companies') }}">Companies – Purpose in Action</a></li>
+                        <li><a href="{{ url_for('mentoring') }}">Mentoring</a></li>
+                    </ul>
+                </li>
+                <li><a href="{{ url_for('about') }}">About Us</a></li>
+                <li><a href="{{ url_for('faq') }}">FAQ</a></li>
+                <li><a href="{{ url_for('contact') }}">Contact Us</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Breadcrumb Navigation -->
+    <div class="breadcrumb">
+        <a href="{{ url_for('home') }}">Home</a> > <span data-translate="contactUs">Contact Us</span>
+    </div>
+
+    <!-- Contact Information -->
+    <div class="contact-info" style="justify-content: center; text-align: center;">
+        <div class="info-item">
+            <div class="info-icon">📧</div>
+            <div class="info-content">
+                <h3 data-translate="email">E-mail</h3>
+                <p data-translate="emailContent">guy@kwekerijamsterdam.nl</p>
+            </div>
+        </div>
+        <div class="info-item">
+            <div class="info-icon">📍</div>
+            <div class="info-content">
+                <h3 data-translate="location">Location</h3>
+                <p data-translate="locationContent">Nieuwe Herengracht 18, 1018DP Amsterdam</p>
+            </div>
+        </div>
+        <div class="info-item">
+            <div class="info-icon">📞</div>
+            <div class="info-content">
+                <h3 data-translate="telephone">Telephone</h3>
+                <p data-translate="telephoneContent">+31 0624355513</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content Section -->
+    <main>
+        <div class="contact-section" style="margin: 40px auto; display: flex; flex-direction: column; align-items: center; text-align: center;">
+            <h1 data-translate="contactUs" style="text-align: center;">Contact Us</h1>
+            
+            {% with messages = get_flashed_messages(with_categories=true) %}
+                {% if messages %}
+                    {% for category, message in messages %}
+                        <div class="alert alert-{{ category }}">{{ message }}</div>
+                    {% endfor %}
+                {% endif %}
+            {% endwith %}
+            
+            <form action="{{ url_for('contact') }}" method="POST" style="width: 100%; max-width: 400px; display: flex; flex-direction: column; align-items: center;">
+                <div class="form-group" style="width: 100%; text-align: left;">
+                    <label for="name" data-translate="name">Name</label>
+                    <input type="text" id="name" name="name" required data-translate="name" placeholder="Name">
+                </div>
+                <div class="form-group" style="width: 100%; text-align: left;">
+                    <label for="email" data-translate="emailLabel">E-mail</label>
+                    <input type="email" id="email" name="email" required data-translate="emailLabel" placeholder="E-mail">
+                </div>
+                <div class="form-group" style="width: 100%; text-align: left;">
+                    <label for="topic" data-translate="topicLabel">Topic</label>
+                    <input type="text" id="topic" name="topic" required data-translate="topicLabel" placeholder="Topic">
+                </div>
+                <div class="form-group" style="width: 100%; text-align: left;">
+                    <label for="question" data-translate="questionLabel">Question</label>
+                    <textarea id="question" name="question" required data-translate="questionLabel" placeholder="Question"></textarea>
+                </div>
+                <button type="submit" data-translate="submitButton" style="margin: 0 auto;">Submit</button>
+            </form>
+        </div>
+    </main>
+
+    <footer class="footer-section">
+        <div class="footer-inner">
+            <div class="footer-locations">
+                <div class="footer-location">
+                    <strong>The Nursery</strong><br>
+                    Nieuwe Herengracht 18<br>
+                    1018 DP Amsterdam
+                </div>
+                <div class="footer-location">
+                    <strong>The Nursery</strong><br>
+                    Neude 11<br>
+                    3512 AE Utrecht
+                </div>
+                <div class="footer-location">
+                    <strong>The Nursery</strong><br>
+                    's-Gravensloot 14<br>
+                    3471 BM Woerden
+                </div>
+            </div>
+            <div class="footer-newsletter">
+                <button class="newsletter-btn">Newsletter Signup</button>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript Link -->
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html> 
