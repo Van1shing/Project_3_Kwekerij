@@ -200,7 +200,6 @@ main {
     margin: 0;
     padding: 0;
     text-transform: none;
-    font-family: 'Georgia', 'Times New Roman', serif;
     line-height: 1.2;
     position: relative;
     display: inline-block;
@@ -487,10 +486,20 @@ main {
 
 /* Collaboration section */
 .collaboration-section {
+    width: 99.5vw;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
     background: #f6f6f8;
-    border-radius: 6px;
-    margin: 48px auto 32px auto;
+    border-radius: 0;
+    box-sizing: border-box;
+    padding: 0;
+}
+.collaboration-section .inner {
     max-width: 1200px;
+    margin: 0 auto;
     padding: 48px 0 32px 0;
     text-align: center;
 }
@@ -512,7 +521,7 @@ main {
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    gap: 64px;
+    gap: 150px;
     margin: 36px auto 0 auto;
     max-width: 1200px;
 }
@@ -891,6 +900,11 @@ main {
 
 @media (max-width: 1200px) {
     .testimonials-section {
+        max-width: 100%;
+        padding-left: 8px;
+        padding-right: 8px;
+    }
+    .collaboration-section .inner {
         max-width: 100%;
         padding-left: 8px;
         padding-right: 8px;
