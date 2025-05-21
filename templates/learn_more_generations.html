@@ -3,10 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Generations at the Table</title>
+    <title>Generations at the Table - De Kwekerij</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
-<body>
+<body style="font-family: 'Inter', sans-serif; background: #f7f7fa;">
     <!-- Header Section -->
     <header>
         <div class="logo">
@@ -14,8 +17,6 @@
                 <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Website Logo">
             </a>
         </div>
-
-        <!-- Navigation Menu -->
         <nav>
             <ul>
                 <li><a href="{{ url_for('home') }}#map-section">Locations</a></li>
@@ -26,7 +27,7 @@
                         <li><a href="{{ url_for('learn_more_blooming') }}">Blooming sessions</a></li>
                         <li><a href="{{ url_for('learn_more_language_cafe') }}">Language cafe</a></li>
                         <li><a href="{{ url_for('learn_more_generations') }}">Generations at the Table</a></li>
-                        <li><a href="https://www.goodcollective.nl/ ">Companies – Purpose in Action</a></li>
+                        <li><a href="https://www.goodcollective.nl/">Companies – Purpose in Action</a></li>
                         <li><a href="{{ url_for('mentoring') }}">Mentoring</a></li>
                     </ul>
                 </li>
@@ -37,10 +38,135 @@
         </nav>
     </header>
     <main>
-        <div style="padding: 40px;">
-            <h1>Generations at the Table</h1>
-            <p>Details about Generations at the Table will go here.</p>
+        <!-- Top Banner -->
+        <div style="width: 100%; min-height: 220px; background: url('{{ url_for('static', filename='images/gen_main.jpg') }}') center center/cover no-repeat; display: flex; flex-direction: column; justify-content: center; align-items: center; position: relative;">
+            <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(41,24,74,0.45); z-index: 1;"></div>
+            <div style="width: 100%; padding: 48px 0 32px 0; text-align: center; position: relative; z-index: 2;">
+                <h1 style="font-size: 2rem; font-weight: 700; color: #fff; margin-bottom: 12px; text-shadow: 0 2px 8px rgba(41,24,74,0.18);">Intergenerational Dinner</h1>
+                <div style="font-size: 1.08rem; color: #fff; font-weight: 500; max-width: 700px; margin: 0 auto; text-shadow: 0 2px 8px rgba(41,24,74,0.18);">
+                    Join us at the table for an evening of good vegetarian food and meaningful conversations between younger and older adults.
+                </div>
+            </div>
+        </div>
+        <!-- Main Content Section -->
+        <div style="width: 100%; min-height: 320px; background: url('{{ url_for('static', filename='images/gen_2.jpg') }}') center center/cover no-repeat; display: flex; align-items: flex-end; position: relative;">
+            <div style="width: 100%; background: rgba(255,255,255,0.92); padding: 64px 0 72px 0; display: flex; flex-direction: column; align-items: center;">
+                <div style="max-width: 800px; width: 100%; padding: 0 32px;">
+                    <h2 style="font-size: 1.5rem; font-weight: 700; color: #232323; margin-bottom: 8px;">What is Wisdom?</h2>
+                    <div style="color: #F2994A; font-size: 1rem; font-weight: 600; margin-bottom: 8px;">Tickets: €21.- including 3-course dinner, drinks and a well-organized program.</div>
+                    <div style="font-size: 1.05rem; color: #232323; line-height: 1.7; margin-bottom: 32px;">
+                        During the Intergenerational Dinner, we step out of our generational bubbles to exchange wisdom, because life's big questions don't just concern young adults, but older generations too.<br><br>
+                        Over a shared meal, we challenge stereotypes and create a safe space to share stories, experiences, and life lessons.<br>
+                        Are you in? Do you know an older adult that may be interested? Spread the word!
+                    </div>
+                    <div style="display: flex; justify-content: center;">
+                        <button id="joinUsBtn" style="background: #F2994A; color: #fff; font-family: 'Inter', sans-serif; font-weight: 600; font-size: 1rem; border: none; border-radius: 8px; padding: 12px 36px; cursor: pointer;">Join Us</button>
+                    </div>
+                    <div id="signupForm" style="display: none; max-width: 400px; margin: 24px auto 0 auto; background: #fff; padding: 24px; border-radius: 8px; box-shadow: 0 2px 12px rgba(41,24,74,0.08);">
+                        <form id="generationsForm" style="display: flex; flex-direction: column; gap: 16px;">
+                            <div style="display: flex; flex-direction: column; gap: 6px;">
+                                <label for="name" style="font-size: 0.95rem; color: #232323; font-weight: 500;">Name</label>
+                                <input type="text" id="name" name="name" required style="padding: 10px; border: 1px solid #ddd; border-radius: 6px; font-size: 1rem; font-family: 'Inter', sans-serif;">
+                            </div>
+                            <div style="display: flex; flex-direction: column; gap: 6px;">
+                                <label for="email" style="font-size: 0.95rem; color: #232323; font-weight: 500;">E-mail</label>
+                                <input type="email" id="email" name="email" required style="padding: 10px; border: 1px solid #ddd; border-radius: 6px; font-size: 1rem; font-family: 'Inter', sans-serif;">
+                            </div>
+                            <div style="display: flex; flex-direction: column; gap: 6px;">
+                                <label for="information" style="font-size: 0.95rem; color: #232323; font-weight: 500;">Additional Information</label>
+                                <textarea id="information" name="information" rows="4" style="padding: 10px; border: 1px solid #ddd; border-radius: 6px; font-size: 1rem; font-family: 'Inter', sans-serif; resize: vertical;"></textarea>
+                            </div>
+                            <button type="submit" style="background: #29184A; color: #fff; font-family: 'Inter', sans-serif; font-weight: 600; font-size: 1rem; border: none; border-radius: 6px; padding: 12px 24px; cursor: pointer; margin-top: 8px;">Submit</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Explore More Section -->
+        <div style="max-width: 1200px; margin: 64px auto 0 auto; font-family: 'Inter', sans-serif;">
+            <h2 class="section-title" style="margin-left: 24px;">Explore More</h2>
+        </div>
+        <div class="what-we-do-cards">
+            <div class="what-we-do-card">
+                <img src="{{ url_for('static', filename='images/blommers_picture.png') }}" alt="Blooming sessions">
+                <div class="card-overlay">
+                    <h3>Blooming sessions</h3>
+                    <p>Sessions for young adults on choices, passions & mental health.</p>
+                    <a href="{{ url_for('learn_more_blooming') }}" class="learn-more">Learn more &rarr;</a>
+                </div>
+            </div>
+            <div class="what-we-do-card">
+                <img src="{{ url_for('static', filename='images/bloomers_picture_2.png') }}" alt="Language cafe">
+                <div class="card-overlay">
+                    <h3>Language cafe</h3>
+                    <p>Dutch language & culture exchange for newcomers with locals.</p>
+                    <a href="{{ url_for('learn_more_language_cafe') }}" class="learn-more">Learn more &rarr;</a>
+                </div>
+            </div>
+            <div class="what-we-do-card">
+                <img src="{{ url_for('static', filename='images/companies.png') }}" alt="Companies - Purpose in Action">
+                <div class="card-overlay">
+                    <h3>Companies – Purpose in Action</h3>
+                    <p>Workshops turning CSR ideals into concrete impact-driven action.</p>
+                    <a href="https://www.goodcollective.nl/" class="learn-more">Learn more &rarr;</a>
+                </div>
+            </div>
         </div>
     </main>
+    <footer class="footer-section">
+        <div class="footer-inner">
+            <div class="footer-locations">
+                <div class="footer-location">
+                    <strong>De Kwekerij</strong><br>
+                    Nieuwe Herengracht 18<br>
+                    1018 DP Amsterdam
+                </div>
+                <div class="footer-location">
+                    <strong>De Kwekerij</strong><br>
+                    Neude 11<br>
+                    3512 AE Utrecht
+                </div>
+                <div class="footer-location">
+                    <strong>De Kwekerij</strong><br>
+                    's-Gravensloot 14<br>
+                    3471 BM Woerden
+                </div>
+            </div>
+            <div class="footer-newsletter">
+                <button class="newsletter-btn">Newsletter Signup</button>
+            </div>
+        </div>
+    </footer>
+    <script>
+        document.getElementById('joinUsBtn').addEventListener('click', function() {
+            const form = document.getElementById('signupForm');
+            if (form.style.display === 'none') {
+                form.style.display = 'block';
+                form.style.animation = 'slideDown 0.3s ease-out';
+            } else {
+                form.style.display = 'none';
+            }
+        });
+
+        document.getElementById('generationsForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            // Here you can add the form submission logic
+            alert('Thank you for your registration! We will contact you soon.');
+            this.reset();
+            document.getElementById('signupForm').style.display = 'none';
+        });
+    </script>
+    <style>
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
 </body>
 </html> 
