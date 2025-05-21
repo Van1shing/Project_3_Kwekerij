@@ -824,6 +824,47 @@ main {
         width: 32px;
         height: 32px;
         font-size: 1.3rem;
+        display: flex !important; /* Force display on mobile */
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        z-index: 10;
+    }
+}
+
+/* Add specific mobile styles for testimonial carousel */
+@media (max-width: 768px) {
+    .testimonial-carousel {
+        position: relative;
+        padding: 40px 0 0 0; /* Add padding at top for arrows */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .testimonial-arrow {
+        position: absolute;
+        top: 0;
+        transform: none;
+        background: rgba(255, 255, 255, 0.9);
+        box-shadow: 0 2px 8px rgba(41,24,74,0.15);
+        margin: 0 10px;
+    }
+    
+    .testimonial-arrow:first-child {
+        left: 50%;
+        transform: translateX(-60px);
+    }
+    
+    .testimonial-arrow:last-child {
+        right: 50%;
+        transform: translateX(60px);
+    }
+    
+    .testimonial-cards {
+        width: 100%;
+        justify-content: center;
+        margin-top: 20px;
     }
 }
 
@@ -909,4 +950,276 @@ main {
         padding-left: 8px;
         padding-right: 8px;
     }
+}
+
+/* Mobile Responsive Styles */
+@media (max-width: 768px) {
+    /* Header */
+    header {
+        padding: 15px 20px;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .logo img {
+        height: 40px;
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 10px;
+        width: 100%;
+    }
+
+    nav ul li {
+        width: 100%;
+        text-align: center;
+    }
+
+    nav ul li a {
+        display: block;
+        padding: 10px;
+        font-size: 16px;
+    }
+
+    /* Dropdown Menu */
+    .dropdown-menu {
+        position: static;
+        width: 100%;
+        box-shadow: none;
+        background: rgba(255, 255, 255, 0.1);
+        padding: 0;
+    }
+
+    .dropdown-menu li a {
+        padding: 10px;
+    }
+
+    /* Hero Sections */
+    .hero-section {
+        min-height: 180px;
+    }
+
+    .hero-section h1 {
+        font-size: 1.8rem;
+    }
+
+    /* Content Sections */
+    .content-section {
+        padding: 20px;
+    }
+
+    .text-content {
+        padding-right: 0;
+    }
+
+    .text-content h2 {
+        font-size: 1.5rem;
+    }
+
+    /* Forms */
+    #signupForm {
+        width: 100%;
+        margin: 20px 0;
+    }
+
+    /* Cards */
+    .what-we-do-cards {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        padding: 20px;
+    }
+
+    .what-we-do-card {
+        height: 250px;
+    }
+
+    /* Footer */
+    .footer-section {
+        padding: 30px 20px;
+    }
+
+    .footer-locations {
+        flex-direction: column;
+        gap: 20px;
+        text-align: center;
+    }
+
+    .footer-newsletter {
+        margin-top: 20px;
+    }
+
+    /* Breadcrumb */
+    .breadcrumb {
+        padding: 10px 20px;
+        font-size: 13px;
+    }
+
+    /* Contact Info */
+    .contact-info {
+        flex-direction: column;
+        gap: 20px;
+        padding: 20px;
+    }
+
+    /* Testimonials */
+    .testimonials-section {
+        padding: 30px 20px;
+    }
+
+    .testimonial {
+        padding: 20px;
+    }
+
+    /* Map Section */
+    .map-section {
+        height: 300px;
+    }
+
+    /* Collaboration Section */
+    .collaboration-section {
+        padding: 30px 20px;
+    }
+
+    .partners-logos {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+    }
+
+    .partners-logos img {
+        max-width: 120px;
+    }
+}
+
+/* Small Mobile Devices */
+@media (max-width: 480px) {
+    .hero-section h1 {
+        font-size: 1.5rem;
+    }
+
+    .text-content h2 {
+        font-size: 1.3rem;
+    }
+
+    .what-we-do-card {
+        height: 200px;
+    }
+
+    .footer-location {
+        font-size: 14px;
+    }
+
+    .newsletter-btn {
+        width: 100%;
+    }
+}
+
+/* Tablet Devices */
+@media (min-width: 769px) and (max-width: 1024px) {
+    header {
+        padding: 20px 30px;
+    }
+
+    .what-we-do-cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .footer-locations {
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+}
+
+/* Ensure smooth transitions */
+* {
+    transition: all 0.3s ease-in-out;
+}
+
+/* Fix for iOS Safari 100vh issue */
+@supports (-webkit-touch-callout: none) {
+    .hero-section {
+        min-height: -webkit-fill-available;
+    }
+}
+
+/* Improve touch targets on mobile */
+@media (max-width: 768px) {
+    button, 
+    .newsletter-btn,
+    .join-button,
+    input[type="submit"] {
+        min-height: 44px;
+        padding: 12px 20px;
+    }
+
+    input, 
+    textarea {
+        font-size: 16px !important; /* Prevents zoom on iOS */
+    }
+}
+
+/* Prevent horizontal scroll */
+html, body {
+    overflow-x: hidden;
+    width: 100%;
+    position: relative;
+}
+
+/* Improve text readability on mobile */
+@media (max-width: 768px) {
+    body {
+        font-size: 16px;
+        line-height: 1.6;
+    }
+
+    p, li {
+        font-size: 16px;
+    }
+
+    h1, h2, h3 {
+        line-height: 1.3;
+    }
+}
+
+@media (max-width: 768px) {
+  .expectations-section .content-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 32px;
+    margin-bottom: 40px;
+    width: 100%;
+  }
+  .expectations-section .expect-card {
+    width: 100%;
+    max-width: 95vw;
+    min-width: 0;
+    margin: 0 auto;
+    background: #fff;
+    border-radius: 18px;
+    box-shadow: 0 2px 16px rgba(41,24,74,0.13);
+    padding: 28px 18px 22px 18px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    font-family: 'Inter', sans-serif;
+    color: #251A3F;
+    min-height: 110px;
+    transition: box-shadow 0.2s;
+  }
+  .expectations-section .expect-card:not(:last-child) {
+    margin-bottom: 0;
+  }
+  .expect-title {
+    font-weight: 700;
+    color: #29184A;
+    font-size: 1.15rem;
+    margin-bottom: 10px;
+  }
+  .expect-desc {
+    font-size: 1.05rem;
+    color: #191919;
+    line-height: 1.7;
+  }
 }
