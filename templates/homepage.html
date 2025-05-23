@@ -36,19 +36,33 @@
                 <li><a href="{{ url_for('contact') }}">Contact Us</a></li>
             </ul>
         </nav>
+        <div class="language-switcher">
+            <a href="#" class="active">EN</a>
+            <span class="divider">|</span>
+            <a href="#">NL</a>
+        </div>
     </header>
 
     <!-- Main Content Section -->
     <main>
-        <div class="main-video" style="width: 100%; margin: 0 auto;">
-            <video controls width="100%">
-                <source src="{{ url_for('static', filename='images/Main_Video.mp4') }}" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
+        <div style="width: 100%; margin-top: 0;">
+            <img src="{{ url_for('static', filename='images/homepage_main_1.jpg') }}" alt="De Kwekerij Main Image" style="width: 100%; height: 500px; object-fit: cover;">
         </div>
         <div class="welcome-section" style="text-align: center; font-family: 'Inter', sans-serif;">
             <h1>Grow together at De Kwekerij</h1>
-            <p style="margin-top: 32px;">Inspiring sessions, language exchanges and inter-generational dinners that connect Amsterdam's international students, migrants and locals.</p>
+            <div style="display: flex; gap: 60px; align-items: flex-start; margin-top: 40px; max-width: 1200px; margin-left: auto; margin-right: auto; padding: 0 32px;">
+                <div style="flex: 1; min-width: 0; text-align: left; padding-right: 20px;">
+                    <p style="font-size: 1.2rem; line-height: 1.8; color: #333; margin-bottom: 0;">De Kwekerij is a community initiative based in Amsterdam that brings internationals and locals together through activities focused on connection, reflection, and personal growth. We organize monthly workshops for young adults on themes like identity, relationships, and mental health, language cafés for newcomers to practice Dutch in an informal setting, and intergenerational dinners where young people and seniors exchange wisdom and stories over a shared meal.
+
+                    Whether you're here to learn, connect, reflect, or just meet new people, you're welcome. Our sessions are interactive, low-pressure, and designed to help you feel part of a vibrant, supportive community—no matter where you're from or how long you've been in the city.</p>
+                </div>
+                <div style="flex: 0 0 520px; max-width: 540px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); border-radius: 18px; overflow: hidden;">
+                    <video controls style="width: 100%; border-radius: 18px; display: block;">
+                        <source src="{{ url_for('static', filename='images/Main_Video.mp4') }}" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+            </div>
         </div>
         <hr style="width: 100%; margin: 32px 0; border: 0; border-top: 2px solid #000;">
         <div style="max-width: 1200px; margin: 0 auto; font-family: 'Inter', sans-serif;">

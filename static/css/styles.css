@@ -1223,3 +1223,35 @@ html, body {
     line-height: 1.7;
   }
 }
+
+/* Language Switcher */
+.language-switcher {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-left: 20px;
+}
+
+.language-switcher a {
+    color: white;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 500;
+    padding: 6px 10px;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.language-switcher a:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.language-switcher a.active {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.language-switcher .divider {
+    color: white;
+    font-size: 15px;
+    font-weight: 500;
+}

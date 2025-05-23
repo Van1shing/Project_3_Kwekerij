@@ -38,31 +38,27 @@
     <!-- Header Section -->
     <header>
         <div class="logo">
-            <a href="{{ url_for('home') }}">
-                <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Website Logo">
+            <a href="/">
+                <img src="{{ url_for('static', filename='images/logo.png') }}" alt="De Kwekerij Logo">
             </a>
         </div>
 
         <!-- Navigation Menu -->
         <nav>
             <ul>
-                <li><a href="{{ url_for('home') }}#map-section">Locations</a></li>
-                <li><a href="{{ url_for('communities') }}">Communities</a></li>
-                <li class="dropdown">
-                    <a href="#" class="dropbtn">Programs</a>
-                    <ul class="dropdown-menu">
-                        <li><a href="{{ url_for('learn_more_blooming') }}">Blooming sessions</a></li>
-                        <li><a href="{{ url_for('learn_more_language_cafe') }}">Language cafe</a></li>
-                        <li><a href="{{ url_for('learn_more_generations') }}">Generations at the Table</a></li>
-                        <li><a href="https://www.goodcollective.nl/">Companies – Purpose in Action</a></li>
-                        <li><a href="{{ url_for('mentoring') }}">Mentoring</a></li>
-                    </ul>
-                </li>
-                <li><a href="{{ url_for('about') }}">About Us</a></li>
-                <li><a href="{{ url_for('faq') }}">FAQ</a></li>
-                <li><a href="{{ url_for('contact') }}">Contact Us</a></li>
+                <li><a href="/locations">Locations</a></li>
+                <li><a href="/communities">Communities</a></li>
+                <li><a href="/programs">Programs</a></li>
+                <li><a href="/about">About Us</a></li>
+                <li><a href="/faq">FAQ</a></li>
+                <li><a href="/contact">Contact Us</a></li>
             </ul>
         </nav>
+        <div class="language-switcher">
+            <a href="#" class="active">EN</a>
+            <span class="divider">|</span>
+            <a href="#">NL</a>
+        </div>
     </header>
 
     <!-- Breadcrumb Navigation -->
